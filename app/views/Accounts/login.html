@@ -1,0 +1,21 @@
+#{extends 'main.html' /} #{set title:'Login' /}
+<div class="ui inverted teal menu">
+	<a class="ui active item">Login</a>
+</div>
+<div class="ui raised segment">
+	<a class="ui teal button" href="/signup">Get Started - sign up here</a>
+	<h4 class="ui item">If already registered log in and begin publishing</h4>
+</div>
+	<form class="ui fluid form segment" action="/authenticate" method="POST">
+		<div class="field">
+			<div class="required field">
+				<label>Username:</label> <input placeholder="e-mail" type="text"
+					name="email" required>
+			</div>
+			<div class="required field">
+				<label>Password</label> <input placeholder="password" type="text"
+					name="password" required>
+			</div>
+		</div>
+		<button class="ui teal button" type="submit">Login</button>
+	</form>
