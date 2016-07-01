@@ -8,6 +8,14 @@ GET     /                                       Accounts.login
 #Accounts
 GET     /login                                  Accounts.login
 GET     /signup                                 Accounts.signup
+GET     /logout                                 Accounts.logout
+
+POST    /register                               Accounts.register
+POST    /authenticate                           Accounts.authenticate
+
+# Blog Controller and View
+GET     /blog                                   Blog.index
+POST    /submitpost                             Blog.newPost
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

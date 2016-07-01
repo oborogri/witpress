@@ -1,9 +1,9 @@
-#{extends 'main.html' /} #{set title:'Get started with WitPress' /}
+#{extends 'main.html' /} #{set title:'Login' /}
 <div class="ui inverted blue menu">
-	<a class="ui active item">WitPress</a>
+	<a class="ui active item">Login Error! Please check your details and try again!</a>
 </div>
 <div class="ui raised segment">
-	<a class="ui blue button" href="/signup">Get Started - sign up here</a>
+	<a class="ui teal button" href="/signup">Get Started - sign up here</a>
 	<h4 class="ui item">If already registered log in and begin publishing</h4>
 </div>
 	<form class="ui fluid form segment" action="/authenticate" method="POST">
@@ -13,7 +13,7 @@
 					name="email" required>
 			</div>
 			<div class="required field">
-				<label>Password</label> <input placeholder="password" type="password"
+				<label>Password</label> <input placeholder="password" type="text"
 					name="password" required>
 			</div>
 		</div>
