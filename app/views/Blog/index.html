@@ -1,8 +1,12 @@
 #{extends 'main.html' /}
 #{set title:"WitPress Home Page for ${user.getName()}" /}
 <div class="ui inverted blue menu">
-	<a class="ui item">WitPress</a> <a class="ui active item">Blog</a> <a
-		class="ui item" href="/logout">Log Out</a>
+  <a class="ui item" href="/">WitPress</a>
+  <a class="ui active item">Blog</a>
+  <a class="ui item" href="publicblogdirectory">Public Blog Directory</a> 
+  <a class="ui item" href="/about">About</a> 
+  <a class="ui item" href="/contact">Contact</a>
+  <a class="ui item" href="/logout">Logout</a>
 </div>
 <div class="ui two column grid">
 	<div class="column">

@@ -15,7 +15,11 @@ POST    /authenticate                           Accounts.authenticate
 
 # Blog Controller and View
 GET     /blog                                   Blog.index
+
 POST    /submitpost                             Blog.newPost
+
+#PublicBlogDirectory
+GET     /publicblogdirectory                    PublicBlogDirectory.index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

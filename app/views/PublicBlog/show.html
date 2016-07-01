@@ -1,0 +1,56 @@
+#{extends 'main.html' /}
+#{set title:"WitPress Blog for ${user.firstName} ${user.lastName}" /}
+<div class="ui inverted blue menu">
+  <a class="ui item" href="/">WitPress</a>
+  <a class="ui item" href="/blog">Blog</a>
+  <a class="ui item" href="publicblogdirectory">Public Blog Directory</a> 
+  <a class="ui item" href="/about">About</a> 
+  <a class="ui item" href="/contact">Contact</a>
+  <a class="ui item" href="/logout">Logout</a>
+</div>
+<div class="ui one column grid">
+  <div class="ten wide column">   
+  <div class="ui segment">
+    #{list items:reversePosts, as:'post'}
+      <h4>
+        ${post.title}
+      </h4> 
+        ${post.content}
+        <div class="ui divider"></div>
+
+      #{if loggedInUser != null}
+
+        <h5> Comments: </h5>     
+        #{list items:post.comments, as:'comment'}
+         <p> 
+           ${comment.content}:
+         </p>     
+        #{/list}  
+        <div class="ui divider"></div>
+        <form action="@{PublicBlog.newComment(post.id, user.id, loggedInUser.id)}" method="POST">   
+          <div class="ui fluid form segment">        
+            <div class="field">
+              <textarea placeholder='Provide a comment here' name="content" rows="2"></textarea>
+            </div>
+            <button class="ui green tiny button">New Comment</button>
+          </div>
+        </form> 
+
+      #{/if}    
+      #{else}
+
+        #{if post.comments.size() > 0}
+          <h5> Comments: </h5>
+            #{list items:post.comments, as:'comment'}
+             <p> 
+               ${comment.content}:
+             </p>     
+            #{/list}
+        <div class="ui divider"></div>
+        #{/if}     
+
+      #{/else}  
+    #{/list}  
+    </div>    
+  </div>
+</div>
