@@ -2,14 +2,19 @@
 #{set title:"WitPress Blog for ${user.firstName} ${user.lastName}" /}
 <div class="ui inverted blue menu">
   <a class="ui item" href="/">WitPress</a>
-  <a class="ui item" href="/blog">Blog</a>
-  <a class="ui item" href="publicblogdirectory">Public Blog Directory</a> 
+  <script>
+    if(user != null) {
+    	<a class="ui active item" href="/blog">Blog</a>
+    }
+    	</script>
+  <a class="ui active item" href="/publicblogdirectory">Public Blog Directory</a> 
   <a class="ui item" href="/about">About</a> 
   <a class="ui item" href="/contact">Contact</a>
   <a class="ui item" href="/logout">Logout</a>
 </div>
 <div class="ui one column grid">
   <div class="ten wide column">   
+  <h4 class="ui header">${user.getName()}'s posts</h4>
   <div class="ui segment">
     #{list items:reversePosts, as:'post'}
       <h4>

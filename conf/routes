@@ -13,13 +13,19 @@ GET     /logout                                 Accounts.logout
 POST    /register                               Accounts.register
 POST    /authenticate                           Accounts.authenticate
 
-# Blog Controller and View
+# Blog
 GET     /blog                                   Blog.index
 
 POST    /submitpost                             Blog.newPost
 
 #PublicBlogDirectory
 GET     /publicblogdirectory                    PublicBlogDirectory.index
+
+#Contact
+GET     /contact                                Contact.index
+
+#About
+GET     /about                                  About.index    
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

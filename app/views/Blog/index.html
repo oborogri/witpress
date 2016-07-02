@@ -1,38 +1,41 @@
-#{extends 'main.html' /}
-#{set title:"WitPress Home Page for ${user.getName()}" /}
+#{extends 'main.html' /} #{set title:"WitPress Home Page for
+${user.getName()}" /}
 <div class="ui inverted blue menu">
-  <a class="ui item" href="/">WitPress</a>
-  <a class="ui active item">Blog</a>
-  <a class="ui item" href="publicblogdirectory">Public Blog Directory</a> 
-  <a class="ui item" href="/about">About</a> 
-  <a class="ui item" href="/contact">Contact</a>
-  <a class="ui item" href="/logout">Logout</a>
+	<a class="ui item">WitPress</a>
+	<a class="ui active item">Blog</a>
+	<a class="ui item" href="publicblogdirectory">Public Blog Directory</a>
+	<a class="ui item" href="/about">About</a> <a class="ui item"
+		href="/contact">Contact</a> <a class="ui item" href="/logout">Logout</a>
 </div>
+<h5 class="ui header">WitPress Home Page for ${user.getName()}</h5>
 <div class="ui two column grid">
 	<div class="column">
 		<form class="ui form" action="/submitpost" method="POST">
-		<div class="ui fluid segment">
+			<div class="ui fluid segment">
 				<div class="field">
-					<textarea placeholder="choose a title for post"
-						rows ="1" name="title" required></textarea>
+					<textarea placeholder="choose a title for post" rows="1"
+						name="title" required></textarea>
 				</div>
 				<div class="field">
-					<textarea placeholder="Write your post here" name="content" required></textarea>
+					<textarea placeholder="Write your post here" name="content"
+						required></textarea>
 				</div>
 				<button class="ui blue button" type="submit">
 					<i class="send icon"></i>Submit New Post
 				</button>
-				</div>
-			</form>
-		</div>
+			</div>
+		</form>
 	</div>
-	<div class="ui fluid form segment">
-		<div class="filed">
+</div>
+<div class="ui fluid form segment">
+<h5 class="ui header">${user.getName()}'s posts:</h5>
+	<div class="filed">
 		#{list items:reversePosts, as:'post'} <a
-		href="@{BlogPost.show(post.id)}"> ${post.title} </a>
-      <div class="ui form">		
-		<a href="@{Blog.deletePost(post.id)}" class="mini ui orange button">Delete </a>
+			href="@{BlogPost.show(post.id)}"> ${post.title} </a>
+		<div class="ui form">
+			<a href="@{Blog.deletePost(post.id)}" class="mini ui grey button">Delete
+			</a>
+		</div>
+		#{/list}
 	</div>
-      #{/list}
-    </div>
-  </div>
+</div>

@@ -2,8 +2,12 @@
 #{set title:"Blogs on WitPress" /}
 <div class="ui inverted blue menu">
   <a class="ui item" href="/">WitPress</a>
-  <a class="ui item" href="/blog">Blog</a>
-  <a class="ui active item" href="/publicblogdirectory">Public Blog Directory</a> 
+  <script>
+    if(user != null) {
+    	<a class="ui active item" href="/blog">Blog</a>
+    }
+    	</script>
+  <a class="ui active item">Public Blog Directory</a> 
   <a class="ui item" href="/about">About</a> 
   <a class="ui item" href="/contact">Contact</a>
   <a class="ui item" href="/logout">Logout</a>

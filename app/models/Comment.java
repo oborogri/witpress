@@ -7,7 +7,8 @@ import javax.persistence.ManyToOne;
 import play.db.jpa.Model;
 
 /**
- * Class that facilitates creating Comment objects  
+ * Class that facilitates creating Comment objects
+ * 
  * @author Grigore O
  *
  */
@@ -16,7 +17,8 @@ public class Comment extends Model {
 	public String content;
 
 	/**
-	 * Constructor for Comment objects 
+	 * Constructor for Comment objects
+	 * 
 	 * @param content
 	 */
 	public Comment(String content) {

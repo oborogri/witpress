@@ -9,7 +9,8 @@ import java.util.List;
 
 /**
  * Class that facilitates creating Post objects
- * @author Grigore
+ * 
+ * @author Grigore Oboroceanu
  *
  */
 @Entity
@@ -23,6 +24,7 @@ public class Post extends Model {
 
 	/**
 	 * Creates post object that concludes title and content
+	 * 
 	 * @param title
 	 * @param content
 	 */
@@ -33,6 +35,7 @@ public class Post extends Model {
 
 	/**
 	 * Facilitates associating a specific comment to a post object
+	 * 
 	 * @param comment
 	 */
 	public void addComment(Comment comment) {
@@ -40,9 +43,8 @@ public class Post extends Model {
 	}
 
 	/**
-	 * Overrides post toString method 
-	 * returns post title 
-	 *  
+	 * Overrides post toString method returns post title
+	 * 
 	 */
 	public String toString() {
 		return title;

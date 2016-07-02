@@ -13,8 +13,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * Class that creates User objects
- * Facilitates associating specific posts with user  
+ * Class that creates User objects Facilitates associating specific posts with
+ * user
+ * 
  * @author G. Oboroceanu
  *
  */
@@ -24,11 +25,10 @@ public class User extends Model {
 	public String lastName;
 	public String email;
 	public String password;
-	
-    @OneToMany(cascade=CascadeType.ALL)
+
+	@OneToMany(cascade = CascadeType.ALL)
 	public List<Post> posts;
-	
-	
+
 	/**
 	 * Constructor for user object
 	 * 
@@ -48,13 +48,13 @@ public class User extends Model {
 
 	/**
 	 * Facilitates adding specific post to user posts list
+	 * 
 	 * @param post
 	 */
-	public void addPost (Post post)
-	  {
-	    posts.add(post);
-	  }
-	
+	public void addPost(Post post) {
+		posts.add(post);
+	}
+
 	/**
 	 * Facilitates identifying a user by their e-mail
 	 * 
@@ -74,25 +74,24 @@ public class User extends Model {
 	public boolean checkPassword(String password) {
 		return this.password.equals(password);
 	}
-	
+
 	/**
-	 * Overrides toString method
-	 * returns user first name
+	 * Overrides toString method returns user first name
 	 */
-	 public String toString()
-	  {
-	    return firstName;
-	  }
-	
+	public String toString() {
+		return firstName;
+	}
+
 	/**
 	 * Facilitates writing user full name
+	 * 
 	 * @return user full name
 	 */
-	
+
 	public String getName() {
-				
+
 		String userName = this.firstName + " " + this.lastName;
-		return userName; 
-		
-	}	
+		return userName;
+
+	}
 }
